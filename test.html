@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Comparison Graph</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            /* Basic styling */
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                text-align: center;
+            }
+
+            .chart-container {
+                width: 80%;
+                margin: auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Team Stats Comparison</h1>
+        <div class="chart-container">
+            <canvas id="positiveNegativeChart"></canvas>
+        </div>
+        <script>
+            const ctx = document.getElementById('positiveNegativeChart').getContext('2d');
+
+// Example data for positive and negative values
+const labels = ['', '', '', '', '', '', '']; // Empty labels for x-axis
+const teamA = [10, 5, 20, 0, 15, 8, 18]; // Positive values (green)
+const teamB = [-8, -15, -12, -5, -10, -7, -9]; // Negative values (purple)
+
+// Create the chart
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [
+            {
+                label: 'Team A',
+                data: teamA,
+                backgroundColor: 'rgba(0, 200, 0, 0.7)', // Green bars
+                borderWidth: 0
+            },
+            {
+                label: 'Team B',
+                data: teamB,
+                backgroundColor: 'rgba(128, 0, 128, 0.7)', // Purple bars
+                borderWidth: 0
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: false }, // Hide the legend
+            title: { display: false } // Remove chart title
+        },
+        scales: {
+            x: {
+                display: false // Hide x-axis
+            },
+            y: {
+                display: false // Hide y-axis
+            }
+        },
+        layout: {
+            padding: {
+                top: 0,
+                bottom: 0
+            }
+        },
+        animation: {
+            duration: 1000
+        }
+    },
+    plugins: [{
+        id: 'customBackground',
+        beforeDraw: (chart) => {
+            const { ctx, chartArea: { top, bottom, left, right, width, height } } = chart;
+            
+            // Background for positive (top half)
+            ctx.save();
+            ctx.fillStyle = 'rgba(230, 255, 230, 0.6)'; // Light green
+            ctx.fillRect(left, top, width, height / 2);
+
+            // Background for negative (bottom half)
+            ctx.fillStyle = 'rgba(240, 230, 255, 0.6)'; // Light purple
+            ctx.fillRect(left, top + height / 2, width, height / 2);
+            ctx.restore();
+        }
+    }]
+});
+
+        </script>
+    </body>
+
+</html>

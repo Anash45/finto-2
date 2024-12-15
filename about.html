@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Finto</title>
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css/slick.min.css">
+        <link rel="stylesheet" href="./assets/css/slick-theme.min.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="d-flex gap-2">
+                        <span
+                            class="cursor-pointer menu-btn navbar-toggler d-flex p-0 border-0 justify-content-center flex-column"
+                            data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <svg width="18" height="12" viewBox="0 0 18 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.5 6H16.5M1.5 1H16.5M1.5 11H16.5" stroke="black" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <a class="navbar-brand ms-1" href="./index.html">
+                            <img src="./assets/img/finto-logo.svg" alt="Logo Finto" class="f-logo" height="28">
+                        </a>
+                    </div>
+                    <div class="d-flex gap-4 align-items-center ms-auto">
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item nav-search">
+                                    <div class="h-search-cont position-relative">
+                                        <input type="text" placeholder="What game do you want AI to predict for you?"
+                                            class="form-control hsc-inp">
+                                        <button type="submit" class="btn hsc-btn">
+                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="15" cy="15" r="15" fill="#34C759" />
+                                                <path
+                                                    d="M21 21L18.6667 18.6667M20.3333 14.6667C20.3333 17.7963 17.7963 20.3333 14.6667 20.3333C11.5371 20.3333 9 17.7963 9 14.6667C9 11.5371 11.5371 9 14.6667 9C17.7963 9 20.3333 11.5371 20.3333 14.6667Z"
+                                                    stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Groups</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Competitions</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">AI Predictions</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 ms-1">
+                            <span class="cursor-pointer dots-grid">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.99992 5.00004C10.4602 5.00004 10.8333 4.62694 10.8333 4.16671C10.8333 3.70647 10.4602 3.33337 9.99992 3.33337C9.53968 3.33337 9.16659 3.70647 9.16659 4.16671C9.16659 4.62694 9.53968 5.00004 9.99992 5.00004Z"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M9.99992 10.8334C10.4602 10.8334 10.8333 10.4603 10.8333 10C10.8333 9.5398 10.4602 9.16671 9.99992 9.16671C9.53968 9.16671 9.16659 9.5398 9.16659 10C9.16659 10.4603 9.53968 10.8334 9.99992 10.8334Z"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M9.99992 16.6667C10.4602 16.6667 10.8333 16.2936 10.8333 15.8334C10.8333 15.3731 10.4602 15 9.99992 15C9.53968 15 9.16659 15.3731 9.16659 15.8334C9.16659 16.2936 9.53968 16.6667 9.99992 16.6667Z"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M15.8333 5.00004C16.2935 5.00004 16.6666 4.62694 16.6666 4.16671C16.6666 3.70647 16.2935 3.33337 15.8333 3.33337C15.373 3.33337 14.9999 3.70647 14.9999 4.16671C14.9999 4.62694 15.373 5.00004 15.8333 5.00004Z"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M15.8333 10.8334C16.2935 10.8334 16.6666 10.4603 16.6666 10C16.6666 9.5398 16.2935 9.16671 15.8333 9.16671C15.373 9.16671 14.9999 9.5398 14.9999 10C14.9999 10.4603 15.373 10.8334 15.8333 10.8334Z"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M15.8333 16.6667C16.2935 16.6667 16.6666 16.2936 16.6666 15.8334C16.6666 15.3731 16.2935 15 15.8333 15C15.373 15 14.9999 15.3731 14.9999 15.8334C14.9999 16.2936 15.373 16.6667 15.8333 16.6667Z"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M4.16659 5.00004C4.62682 5.00004 4.99992 4.62694 4.99992 4.16671C4.99992 3.70647 4.62682 3.33337 4.16659 3.33337C3.70635 3.33337 3.33325 3.70647 3.33325 4.16671C3.33325 4.62694 3.70635 5.00004 4.16659 5.00004Z"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M4.16659 10.8334C4.62682 10.8334 4.99992 10.4603 4.99992 10C4.99992 9.5398 4.62682 9.16671 4.16659 9.16671C3.70635 9.16671 3.33325 9.5398 3.33325 10C3.33325 10.4603 3.70635 10.8334 4.16659 10.8334Z"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M4.16659 16.6667C4.62682 16.6667 4.99992 16.2936 4.99992 15.8334C4.99992 15.3731 4.62682 15 4.16659 15C3.70635 15 3.33325 15.3731 3.33325 15.8334C3.33325 16.2936 3.70635 16.6667 4.16659 16.6667Z"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                            <span class="profile-icon cursor-pointer ms-1">
+                                <img src="./assets/img/profile-img.png" alt="Profile">
+                            </span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main class="main-page">
+            <section class="page-title-bg">
+                <div class="container">
+                    <h5 class="text-dark fw-bold text-center"> About Us </h5>
+                </div>
+            </section>
+            <section class="py-5">
+                <div class="container content-container">
+                    <div class="d-flex flex-column gap-5">
+                        <p class="mb-0 abt-text"> Lorem ipsum dolor sit amet consectetur. Tortor in diam lacus tincidunt
+                            adipiscing. Et at facilisi purus purus semper suspendisse quis iaculis etiam. Morbi
+                            consequat scelerisque arcu purus non. Commodo odio purus tortor semper consectetur nisl
+                            venenatis. Habitasse ante mi praesent blandit. Leo suspendisse non ac eget commodo
+                            consectetur amet purus lectus. <br><br> Dictum pellentesque ipsum lectus semper enim natoque
+                            quisque leo eros. Egestas lacinia cras ultricies enim. Metus lectus nunc ultrices orci.
+                            Tempor mollis a rhoncus varius nec vitae quis. Lorem amet ut pulvinar urna arcu amet.
+                            Dignissim bibendum velit nunc sodales vitae facilisi augue in. Elit eget erat in mauris diam
+                            lacus. Vulputate porttitor at massa ultricies enim purus lectus. <br><br>
+                            <span class="fw-bold">Ullamcorper sed nulla malesuada tempus egestas.</span>
+                            <br> Et bibendum ut in blandit pharetra massa. Nulla at cras semper et a sit pharetra. Leo
+                            tristique morbi vestibulum nisl pretium augue sed. Massa nunc orci sit urna tincidunt eu sit
+                            id. Elit natoque varius tellus venenatis quis tincidunt ut.
+                        </p>
+                        <div class="row roboto">
+                            <div class="col-lg-8 pb-lg-0 pb-4">
+                                <div class="d-flex flex-column gap-4">
+                                    <div class="d-flex flex-column gap-2 mb-2 pb-1">
+                                        <p class="text-main fw-medium mb-0 abt-normal">Overview</p>
+                                        <p class="mb-0 abt-text">With Finto AI, get accurate forecasts based on
+                                            historical data and current trends. Predict the outcome using advanced
+                                            algorithms! <br><br> Lorem ipsum dolor sit amet consectetur. Vitae lectus
+                                            purus tortor malesuada massa turpis tristique lacus. Adipiscing purus nulla
+                                            imperdiet quam sem. Facilisi sed curabitur rutrum massa id ut consectetur
+                                            aliquet volutpat. Sed mauris sodales semper viverra velit mus tempus.
+                                            Dignissim aliquam duis egestas ut ornare commodo blandit mi. Vitae rhoncus
+                                            curabitur purus amet sit. </p>
+                                    </div>
+                                    <div class="text-start">
+                                        <a href="#" class="btn btn-main"><span class="px-4">Join Now</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <img src="./assets/img/abt-img-1.png" alt="Image" class="img-fluid abt-img">
+                            </div>
+                        </div>
+                        <div class="row roboto flex-lg-row flex-column-reverse">
+                            <div class="col-lg-4 text-center">
+                                <img src="./assets/img/abt-img-2.png" alt="Image"
+                                    class="img-fluid abt-img abti-2 h-100">
+                            </div>
+                            <div class="col-lg-8 pb-lg-0 pb-4">
+                                <div class="d-flex flex-column gap-4">
+                                    <div class="d-flex flex-column gap-2">
+                                        <p class="text-main fw-medium mb-1 abt-normal">About the Project</p>
+                                        <p class="mb-0 abt-text"><span class="abt-sm fw-medium">Lorem ipsum dolor sit
+                                                amet consectetur. Tortor in diam lacus tincidunt adipiscing. Et at
+                                                facilisi purus purus semper suspendisse quis iaculis etiam. Morbi
+                                                consequat scelerisque arcu purus non. Commodo odio purus tortor semper
+                                                consectetur nisl venenatis. Habitasse ante mi praesent blandit. Leo
+                                                suspendisse non ac eget commodo consectetur amet purus lectus.</span>
+                                            <br><br>
+                                            <span>Dictum pellentesque ipsum lectus semper enim natoque quisque leo eros.
+                                                Egestas lacinia cras ultricies enim. Metus lectus nunc ultrices orci.
+                                                Tempor mollis a rhoncus varius nec vitae quis. Lorem amet ut pulvinar
+                                                urna arcu amet. Dignissim bibendum velit nunc sodales vitae facilisi
+                                                augue in. Elit eget erat in mauris diam lacus. Vulputate porttitor at
+                                                massa ultricies enim purus lectus.</span>
+                                            <br><br>
+                                            <span class="fw-bold abt-normal">Ullamcorper sed nulla malesuada tempus
+                                                egestas.</span><br> Et bibendum ut in blandit pharetra massa. Nulla at
+                                            cras semper et a sit pharetra. Leo tristique morbi vestibulum nisl pretium
+                                            augue sed. Massa nunc orci sit urna tincidunt eu sit id. Elit natoque varius
+                                            tellus venenatis quis tincidunt ut. <br><br> Lorem ipsum dolor sit amet
+                                            consectetur. Tortor in diam lacus tincidunt adipiscing. Et at facilisi purus
+                                            purus semper suspendisse quis iaculis etiam. Morbi consequat scelerisque
+                                            arcu purus non. Commodo odio purus tortor semper consectetur nisl venenatis.
+                                            Habitasse ante mi praesent blandit. Leo suspendisse non ac eget commodo
+                                            consectetur amet purus lectus.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="pt-5 pb-4">
+                <div class="container content-container-2">
+                    <div class="d-flex flex-column gap-4 align-items-center">
+                        <h4 class="sec-title fw-medium text-black lh-sm mb-3 text-center"> In the One Portal, <br>
+                            Features we have combined </h4>
+                        <div class="row features-row w-100">
+                            <div class="col-lg-4 col-md-6 pb-4">
+                                <div class="feat-card h-100">
+                                    <div class="d-flex flex-column gap-3">
+                                        <svg width="53" height="54" viewBox="0 0 53 54" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect y="0.206909" width="52.9655" height="52.9655" rx="26.4828"
+                                                fill="#34C759" fill-opacity="0.1" />
+                                            <path
+                                                d="M22.7587 25.4483H22.767M26.4828 25.4483H26.4911M30.207 25.4483H30.2152M22.3449 31.6552V33.588C22.3449 34.029 22.3449 34.2495 22.4353 34.3627C22.5139 34.4612 22.6331 34.5185 22.7591 34.5184C22.904 34.5182 23.0762 34.3805 23.4206 34.105L25.3947 32.5257C25.798 32.203 25.9997 32.0417 26.2242 31.927C26.4234 31.8252 26.6355 31.7509 26.8546 31.7059C27.1016 31.6552 27.3598 31.6552 27.8763 31.6552H29.9587C31.3492 31.6552 32.0444 31.6552 32.5755 31.3846C33.0426 31.1466 33.4225 30.7667 33.6605 30.2996C33.9311 29.7685 33.9311 29.0732 33.9311 27.6828V23.2138C33.9311 21.8233 33.9311 21.1281 33.6605 20.597C33.4225 20.1298 33.0426 19.75 32.5755 19.512C32.0444 19.2414 31.3492 19.2414 29.9587 19.2414H23.007C21.6165 19.2414 20.9212 19.2414 20.3902 19.512C19.923 19.75 19.5432 20.1298 19.3052 20.597C19.0345 21.1281 19.0345 21.8233 19.0345 23.2138V28.3448C19.0345 29.1145 19.0345 29.4993 19.1191 29.815C19.3487 30.6718 20.0179 31.341 20.8747 31.5706C21.1904 31.6552 21.5753 31.6552 22.3449 31.6552ZM23.1725 25.4483C23.1725 25.6768 22.9872 25.8621 22.7587 25.8621C22.5302 25.8621 22.3449 25.6768 22.3449 25.4483C22.3449 25.2198 22.5302 25.0345 22.7587 25.0345C22.9872 25.0345 23.1725 25.2198 23.1725 25.4483ZM26.8966 25.4483C26.8966 25.6768 26.7114 25.8621 26.4828 25.8621C26.2543 25.8621 26.069 25.6768 26.069 25.4483C26.069 25.2198 26.2543 25.0345 26.4828 25.0345C26.7114 25.0345 26.8966 25.2198 26.8966 25.4483ZM30.6208 25.4483C30.6208 25.6768 30.4355 25.8621 30.207 25.8621C29.9784 25.8621 29.7932 25.6768 29.7932 25.4483C29.7932 25.2198 29.9784 25.0345 30.207 25.0345C30.4355 25.0345 30.6208 25.2198 30.6208 25.4483Z"
+                                                stroke="#34C759" stroke-width="1.65517" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <div class="d-flex flex-column gap-3 my-1">
+                                            <span class="lh-1 feat-title">Chat and Feed</span>
+                                            <span class="lh-sm feat-desc">Stay connected with your team, comment on
+                                                matches, and follow your friends' activities on our live feed!</span>
+                                        </div>
+                                        <a href="#" class="d-flex align-items-center gap-2 text-green feat-link">
+                                            <span class="me-1">Learn More.</span>
+                                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="16.1379" y="10.889" width="12.4138" height="1.24138"
+                                                    transform="rotate(-180 16.1379 10.889)" fill="#34C759" />
+                                                <path d="M11.1725 15.6897L16.9656 10.3104L11.1725 4.93105"
+                                                    stroke="#34C759" stroke-width="1.24138" stroke-linecap="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 pb-4">
+                                <div class="feat-card h-100">
+                                    <div class="d-flex flex-column gap-3">
+                                        <svg width="54" height="54" viewBox="0 0 54 54" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0.517212" y="0.689667" width="52.9655" height="52.9655"
+                                                rx="26.4828" fill="#34C759" fill-opacity="0.1" />
+                                            <path
+                                                d="M26.9996 27.1726H27.0079M29.9256 30.0985C26.0473 33.9768 21.5933 35.8108 19.9773 34.1949C18.3614 32.5789 20.1954 28.1249 24.0737 24.2466C27.952 20.3683 32.406 18.5343 34.0219 20.1503C35.6379 21.7662 33.8039 26.2202 29.9256 30.0985ZM29.9256 24.2464C33.8039 28.1248 35.6379 32.5787 34.0219 34.1947C32.406 35.8107 27.952 33.9767 24.0737 30.0984C20.1953 26.2201 18.3614 21.7661 19.9773 20.1501C21.5933 18.5341 26.0473 20.3681 29.9256 24.2464ZM27.4134 27.1726C27.4134 27.4011 27.2282 27.5863 26.9996 27.5863C26.7711 27.5863 26.5859 27.4011 26.5859 27.1726C26.5859 26.944 26.7711 26.7588 26.9996 26.7588C27.2282 26.7588 27.4134 26.944 27.4134 27.1726Z"
+                                                stroke="#34C759" stroke-width="1.65517" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <div class="d-flex flex-column gap-3 my-1">
+                                            <span class="lh-1 feat-title">AI Predection</span>
+                                            <span class="lh-sm feat-desc">There’s no limit to how creative you can get
+                                                when working with Twin Oaks, including custom paver stone
+                                                designs.</span>
+                                        </div>
+                                        <a href="#" class="d-flex align-items-center gap-2 text-green feat-link">
+                                            <span class="me-1">Learn More.</span>
+                                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="16.1379" y="10.889" width="12.4138" height="1.24138"
+                                                    transform="rotate(-180 16.1379 10.889)" fill="#34C759" />
+                                                <path d="M11.1725 15.6897L16.9656 10.3104L11.1725 4.93105"
+                                                    stroke="#34C759" stroke-width="1.24138" stroke-linecap="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 pb-4">
+                                <div class="feat-card h-100">
+                                    <div class="d-flex flex-column gap-3">
+                                        <svg width="54" height="54" viewBox="0 0 54 54" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0.551514" y="0.689667" width="52.9655" height="52.9655"
+                                                rx="26.4828" fill="#34C759" fill-opacity="0.1" />
+                                            <path
+                                                d="M24.4491 28.0789L20.9939 23.7599C20.7788 23.4911 20.6713 23.3566 20.5948 23.2069C20.5269 23.0741 20.4774 22.9328 20.4474 22.7867C20.4136 22.622 20.4136 22.4498 20.4136 22.1055V21.5449C20.4136 20.6179 20.4136 20.1544 20.594 19.8003C20.7527 19.4889 21.0059 19.2357 21.3173 19.077C21.6714 18.8966 22.1349 18.8966 23.0619 18.8966H31.0067C31.9337 18.8966 32.3972 18.8966 32.7512 19.077C33.0627 19.2357 33.3159 19.4889 33.4746 19.8003C33.655 20.1544 33.655 20.6179 33.655 21.5449V22.1055C33.655 22.4498 33.655 22.622 33.6212 22.7867C33.5912 22.9328 33.5416 23.0741 33.4737 23.2069C33.3973 23.3566 33.2897 23.491 33.0746 23.7599L29.6194 28.0789M21.2412 19.7242L27.0343 27.1724L32.8273 19.7242M29.9602 28.3844C31.5762 30.0004 31.5762 32.6204 29.9602 34.2363C28.3443 35.8523 25.7243 35.8523 24.1083 34.2363C22.4923 32.6204 22.4923 30.0004 24.1083 28.3844C25.7243 26.7684 28.3443 26.7684 29.9602 28.3844Z"
+                                                stroke="#34C759" stroke-width="1.65517" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <div class="d-flex flex-column gap-3 my-1">
+                                            <span class="lh-1 feat-title">Advance Leaderboard</span>
+                                            <span class="lh-sm feat-desc">There’s no limit to how creative you can get
+                                                when working with Twin Oaks, including custom paver stone
+                                                designs.</span>
+                                        </div>
+                                        <a href="#" class="d-flex align-items-center gap-2 text-green feat-link">
+                                            <span class="me-1">Learn More.</span>
+                                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="16.1379" y="10.889" width="12.4138" height="1.24138"
+                                                    transform="rotate(-180 16.1379 10.889)" fill="#34C759" />
+                                                <path d="M11.1725 15.6897L16.9656 10.3104L11.1725 4.93105"
+                                                    stroke="#34C759" stroke-width="1.24138" stroke-linecap="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 pb-4">
+                                <div class="feat-card h-100">
+                                    <div class="d-flex flex-column gap-3">
+                                        <svg width="54" height="54" viewBox="0 0 54 54" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0.482788" y="0.896576" width="52.9655" height="52.9655"
+                                                rx="26.4828" fill="#34C759" fill-opacity="0.1" />
+                                            <path
+                                                d="M24.4828 26.9655L26.138 28.6207L29.8621 24.8966M33.5862 27.3793C33.5862 31.4415 29.1554 34.3959 27.5432 35.3365C27.36 35.4434 27.2684 35.4968 27.1391 35.5245C27.0387 35.5461 26.8923 35.5461 26.792 35.5245C26.6627 35.4968 26.5711 35.4434 26.3879 35.3365C24.7757 34.3959 20.3448 31.4415 20.3448 27.3793V23.4215C20.3448 22.7598 20.3448 22.429 20.4531 22.1446C20.5487 21.8934 20.704 21.6692 20.9057 21.4915C21.1339 21.2903 21.4437 21.1742 22.0633 20.9418L26.5006 19.2778C26.6727 19.2133 26.7587 19.181 26.8472 19.1683C26.9257 19.1569 27.0054 19.1569 27.0839 19.1683C27.1724 19.181 27.2584 19.2133 27.4305 19.2778L31.8678 20.9418C32.4874 21.1742 32.7971 21.2903 33.0254 21.4915C33.2271 21.6692 33.3824 21.8934 33.478 22.1446C33.5862 22.429 33.5862 22.7598 33.5862 23.4215V27.3793Z"
+                                                stroke="#34C759" stroke-width="1.65517" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <div class="d-flex flex-column gap-3 my-1">
+                                            <span class="lh-1 feat-title">Secure</span>
+                                            <span class="lh-sm feat-desc">There’s no limit to how creative you can get
+                                                when working with Twin Oaks, including custom paver stone
+                                                designs.</span>
+                                        </div>
+                                        <a href="#" class="d-flex align-items-center gap-2 text-green feat-link">
+                                            <span class="me-1">Learn More.</span>
+                                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="16.1379" y="10.889" width="12.4138" height="1.24138"
+                                                    transform="rotate(-180 16.1379 10.889)" fill="#34C759" />
+                                                <path d="M11.1725 15.6897L16.9656 10.3104L11.1725 4.93105"
+                                                    stroke="#34C759" stroke-width="1.24138" stroke-linecap="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 pb-4">
+                                <div class="feat-card h-100">
+                                    <div class="d-flex flex-column gap-3">
+                                        <svg width="54" height="54" viewBox="0 0 54 54" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0.517212" y="0.896576" width="52.9655" height="52.9655"
+                                                rx="26.4828" fill="#34C759" fill-opacity="0.1" />
+                                            <g clip-path="url(#clip0_1_3355)">
+                                                <path
+                                                    d="M35.2759 26.6227V27.3841C35.2748 29.1687 34.697 30.9052 33.6284 32.3346C32.5598 33.7639 31.0579 34.8096 29.3465 35.3156C27.6351 35.8216 25.806 35.7608 24.132 35.1424C22.4579 34.5239 21.0287 33.3808 20.0573 31.8837C19.086 30.3866 18.6246 28.6156 18.7421 26.8348C18.8595 25.0541 19.5494 23.359 20.7089 22.0023C21.8684 20.6457 23.4354 19.7003 25.1761 19.307C26.9169 18.9137 28.7381 19.0936 30.3683 19.8199M35.2758 20.7586L27 29.0428L24.5172 26.56"
+                                                    stroke="#34C759" stroke-width="1.65517" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_1_3355">
+                                                    <rect width="19.8621" height="19.8621" fill="white"
+                                                        transform="translate(17.069 17.4483)" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <div class="d-flex flex-column gap-3 my-1">
+                                            <span class="lh-1 feat-title">Real Time Updates</span>
+                                            <span class="lh-sm feat-desc">There’s no limit to how creative you can get
+                                                when working with Twin Oaks, including custom paver stone
+                                                designs.</span>
+                                        </div>
+                                        <a href="#" class="d-flex align-items-center gap-2 text-green feat-link">
+                                            <span class="me-1">Learn More.</span>
+                                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="16.1379" y="10.889" width="12.4138" height="1.24138"
+                                                    transform="rotate(-180 16.1379 10.889)" fill="#34C759" />
+                                                <path d="M11.1725 15.6897L16.9656 10.3104L11.1725 4.93105"
+                                                    stroke="#34C759" stroke-width="1.24138" stroke-linecap="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 pb-4">
+                                <div class="feat-card h-100">
+                                    <div class="d-flex flex-column gap-3">
+                                        <svg width="54" height="54" viewBox="0 0 54 54" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="0.551514" y="0.896576" width="52.9655" height="52.9655"
+                                                rx="26.4828" fill="#34C759" fill-opacity="0.1" />
+                                            <path
+                                                d="M29.5588 24.8966H21.6549C20.5122 24.8966 19.5859 23.9703 19.5859 22.8276C19.5859 21.685 20.5122 20.7586 21.6549 20.7586H29.5588M24.5097 34H32.4135C33.5562 34 34.4825 33.0737 34.4825 31.9311C34.4825 30.7884 33.5562 29.8621 32.4135 29.8621H24.5097M19.5859 31.9311C19.5859 33.5308 20.8828 34.8276 22.4825 34.8276C24.0822 34.8276 25.379 33.5308 25.379 31.9311C25.379 30.3313 24.0822 29.0345 22.4825 29.0345C20.8828 29.0345 19.5859 30.3313 19.5859 31.9311ZM34.4825 22.8276C34.4825 24.4273 33.1857 25.7242 31.5859 25.7242C29.9862 25.7242 28.6894 24.4273 28.6894 22.8276C28.6894 21.2279 29.9862 19.9311 31.5859 19.9311C33.1857 19.9311 34.4825 21.2279 34.4825 22.8276Z"
+                                                stroke="#34C759" stroke-width="1.65517" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <div class="d-flex flex-column gap-3 my-1">
+                                            <span class="lh-1 feat-title">Specified Filtering</span>
+                                            <span class="lh-sm feat-desc">There’s no limit to how creative you can get
+                                                when working with Twin Oaks, including custom paver stone
+                                                designs.</span>
+                                        </div>
+                                        <a href="#" class="d-flex align-items-center gap-2 text-green feat-link">
+                                            <span class="me-1">Learn More.</span>
+                                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="16.1379" y="10.889" width="12.4138" height="1.24138"
+                                                    transform="rotate(-180 16.1379 10.889)" fill="#34C759" />
+                                                <path d="M11.1725 15.6897L16.9656 10.3104L11.1725 4.93105"
+                                                    stroke="#34C759" stroke-width="1.24138" stroke-linecap="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="pb-4 pt-3">
+                <div class="container content-container">
+                    <div class="d-flex flex-column align-items-center gap-lg-5 gap-4">
+                        <p class="mb-0 text-main fw-medium">Popular Leagues</p>
+                        <div>
+                            <img src="./assets/img/leagues-logos.png" alt="League Logos" class="leagues-logos">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="pb-4 pt-3 mb-3">
+                <div class="container content-container">
+                    <div class="tournamets-flex d-flex flex-column">
+                        <div class="d-flex align-items-center gap-4 flex-wrap justify-content-between">
+                            <div class="tf-content d-flex flex-column">
+                                <p class="mb-0 tf-title fw-medium text-main">Football Tournaments</p>
+                                <p class="tf-text mb-0">
+                                    With Finto AI, get accurate forecasts based on historical data and current trends. Predict the outcome using advanced algorithms!
+                                    <br><br>
+                                    Lorem ipsum dolor sit amet consectetur. Vitae lectus purus tortor malesuada massa turpis tristique lacus. Adipiscing purus nulla imperdiet quam sem. Facilisi sed curabitur rutrum massa id ut consectetur aliquet volutpat. Sed mauris sodales semper viverra velit mus tempus. Dignissim aliquam duis egestas ut ornare commodo blandit mi. Vitae rhoncus curabitur purus amet sit.
+                                </p>
+                            </div>
+                            <div class="tf-numbers d-flex flex-column align-items-center justify-content-center text-main">
+                                <span class="lh-1 tfn-title">343</span>
+                                <span class="lh-1 tfn-desc">Tournaments</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-4 flex-wrap justify-content-between">
+                            <div class="tf-content d-flex flex-column">
+                                <p class="mb-0 tf-title fw-medium text-main">Hockey Tournaments</p>
+                                <p class="tf-text mb-0">
+                                    With Finto AI, get accurate forecasts based on historical data and current trends. Predict the outcome using advanced algorithms!
+                                    <br><br>
+                                    Lorem ipsum dolor sit amet consectetur. Vitae lectus purus tortor malesuada massa turpis tristique lacus. Adipiscing purus nulla imperdiet quam sem. Facilisi sed curabitur rutrum massa id ut consectetur aliquet volutpat. Sed mauris sodales semper viverra velit mus tempus. Dignissim aliquam duis egestas ut ornare commodo blandit mi. Vitae rhoncus curabitur purus amet sit.
+                                </p>
+                            </div>
+                            <div class="tf-numbers d-flex flex-column align-items-center justify-content-center text-main">
+                                <span class="lh-1 tfn-title">233</span>
+                                <span class="lh-1 tfn-desc">Tournaments</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-4 flex-wrap justify-content-between">
+                            <div class="tf-content d-flex flex-column">
+                                <p class="mb-0 tf-title fw-medium text-main">Tennis Tournaments</p>
+                                <p class="tf-text mb-0">
+                                    With Finto AI, get accurate forecasts based on historical data and current trends. Predict the outcome using advanced algorithms!
+                                    <br><br>
+                                    Lorem ipsum dolor sit amet consectetur. Vitae lectus purus tortor malesuada massa turpis tristique lacus. Adipiscing purus nulla imperdiet quam sem. Facilisi sed curabitur rutrum massa id ut consectetur aliquet volutpat. Sed mauris sodales semper viverra velit mus tempus. Dignissim aliquam duis egestas ut ornare commodo blandit mi. Vitae rhoncus curabitur purus amet sit.
+                                </p>
+                            </div>
+                            <div class="tf-numbers d-flex flex-column align-items-center justify-content-center text-main">
+                                <span class="lh-1 tfn-title">127</span>
+                                <span class="lh-1 tfn-desc">Tournaments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-5 slider-sec">
+                <p class="text-center fw-medium text-main mb-5">App Screenshots</p>
+                <div class="carousel">
+                    <div class="sc-slide">
+                        <img src="./assets/img/app-ss-1.png" alt="Image" class="sc-img">
+                    </div>
+                    <div class="sc-slide">
+                        <img src="./assets/img/app-ss-1.png" alt="Image" class="sc-img">
+                    </div>
+                    <div class="sc-slide">
+                        <img src="./assets/img/app-ss-1.png" alt="Image" class="sc-img">
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="./index.html">
+                        <img src="./assets/img/finto-logo.svg" alt="Logo Finto" class="f-logo" height="23">
+                    </a>
+                    <div class="d-flex align-items-center gap-3">
+                        <a href="#" class="text-main text-decoration-none f-link"> Help </a>
+                        <a href="#" class="text-main text-decoration-none f-link"> Feedback </a>
+                        <a href="#" class="text-main text-decoration-none f-link"> Terms & Conditions </a>
+                        <a href="#" class="text-main text-decoration-none f-link"> Privacy Policy </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="./assets/js/jquery-3.7.1.min.js"></script>
+        <script src="./assets/js/bootstrap.bundle.min.js"></script>
+        <script src="./assets/js/slick.min.js"></script>
+        <script src="./assets/js/custom.js"></script>
+    </body>
+
+</html>

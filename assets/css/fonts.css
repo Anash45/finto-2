@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face {
+    font-family: "Product Sans";
+    src: url(../fonts/ProductSans-Light.ttf) format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Product Sans";
+    src: url(../fonts/ProductSans-Regular.ttf) format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Product Sans";
+    src: url(../fonts/ProductSans-Medium.ttf) format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Product Sans";
+    src: url(../fonts/ProductSans-Bold.ttf) format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Product Sans";
+    src: url(../fonts/ProductSans-Black.ttf) format("truetype");
+    font-weight: 900;
+}
