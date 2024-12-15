@@ -501,6 +501,7 @@ header {
     }
 
     .carousel .slick-track {
+        padding: 0;
         gap: 0;
     }
 
