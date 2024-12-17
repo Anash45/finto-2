@@ -77,4 +77,12 @@ $(document).ready(function () {
             ]
         });
     }
+
+    $('.more-info-btn').each(function () {
+
+        $(this).click(function () {
+            $(this).closest('.gt-match').toggleClass('expanded');
+        });
+
+    });
 });
