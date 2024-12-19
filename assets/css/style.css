@@ -1162,7 +1162,7 @@ tr.player-info {
     transform: rotate(180deg);
 }
 
-.pi-shown~tr.player-info {
+.pi-shown + tr.player-info {
     display: table-row;
 }
 
